@@ -1,0 +1,280 @@
+/* --- Global Styles & Typography --- */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Serif Pro', 'Georgia', serif;
+    background-color: #f8f7f1;
+    color: #222;
+    line-height: 1.6;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Libre Baskerville', 'Times New Roman', serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 50px 20px 70px 20px;
+    flex: 1;
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+h1 .logo {
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    font-size: 1rem;
+    color: #444;
+}
+
+nav a {
+    text-decoration: underline;
+    color: inherit;
+    outline: none;
+}
+
+.separator {
+    margin: 0 8px;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+/* --- Publications Section --- */
+.publications {
+    margin-bottom: 50px;
+}
+
+.publications h3 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- Article Card --- */
+.article-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    padding: 0px 0px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+    border-color: #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02); /* Very subtle lift */
+}
+
+.article-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.article-card td {
+    vertical-align: middle;
+}
+
+.article-id {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    width: 102px;
+    white-space: nowrap;
+    background-color: #f0ede3;
+    padding: 8px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.article-content {
+    padding: 0 8px;
+}
+
+.article-content h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Style the title link to look like text but interactive */
+.article-content h4 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.article-content h4 a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+.article-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.article-actions {
+    width: 52px;
+    min-width: 52px;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 0;
+    padding-right: 8px;
+}
+
+/* --- Download Button --- */
+.download-btn {
+    color: #333;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.1s;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    display: inline-block;
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+/* Create download icon with CSS */
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.article-card:hover .download-btn {
+    opacity: 1;
+}
+
+.download-btn:hover {
+    transform: translateY(2px); /* Subtle nudge down effect */
+}
+
+/* --- Comment/Discussion Button --- */
+.comment-btn {
+    margin-left: 8px;
+    color: #333;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.1s;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Create comment icon with CSS - speech bubble icon */
+.comment-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.article-card:hover .comment-btn {
+    opacity: 1;
+}
+
+.comment-btn:hover {
+    transform: translateY(2px); /* Subtle nudge down effect */
+}
+
+/* --- Footer --- */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #eaeaea;
+    font-size: 0.75rem;
+    color: #555;
+    background-color: #f8f7f1;
+    width: 100%;
+    z-index: 100;
+}
+
+footer p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+footer a {
+    color: #333;
+    text-decoration: underline;
+}
+
+footer .cc-icon {
+    height: 20px;
+    width: auto;
+    vertical-align: middle;
+}
