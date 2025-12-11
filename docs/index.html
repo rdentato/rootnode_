@@ -33,8 +33,24 @@
                         <tr>
                             <td class="article-id">RTR-01</td>
                             <td class="article-content">
-                                <h4><a href="#">Complexity Theory</a></h4>
-                                <p>This nutors a summary based on complexing complexity connesering underzeunable lats.</p>
+                                <h4><a href="#" class="article-title">An Action-Centric Ontology for Software Development</a></h4>
+                                <p class="article-brief">Unify software development activities through an "ontology of action", treating actions, rather than objects, as the primary reality of software systems.</p>
+                                <div class="article-abstract">
+                                    <p><strong>Abstract:</strong> 
+Software development remains plagued by conceptual fragmentation: requirements engineering,
+architectural design, implementation, and testing are treated as distinct disciplines
+with incompatible ontologies. This paper proposes a unified philosophical framework
+grounded in action ontology, the thesis that actions, not objects or states, constitute the
+primary reality of software systems. Drawing on Turchin’s cybernetic ontology and Heylighen’s
+theory of formality, we develop a comprehensive world view in which: (1) states
+are defined by the actions they enable; (2) software artifacts at all levels are decisions
+about action possibilities; (3) the development process is a progressive formalization along
+a context-dependence continuum; and (4) validation is the selection of decisions by observable
+reality. We demonstrate how this framework unifies the traditionally separate activities
+of requirements specification, architectural design, use case definition, coding, and testing
+under a single coherent ontology. The practical implications include novel approaches to
+traceability, change management, and tool design for software development environments.</p>
+                                </div>
                             </td>
                             <td class="article-actions">
                                 <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
@@ -43,14 +59,17 @@
                         </tr>
                     </table>
                 </article>
-                
+            <!--                
                 <article class="article-card">
                     <table>
                         <tr>
                             <td class="article-id">RTR-02</td>
                             <td class="article-content">
-                                <h4><a href="#">Mutreraphic Poners</a></h4>
-                                <p>The classon-care concept between, and abuverems so axist:now, and the lent earth science.</p>
+                                <h4><a href="#" class="article-title">Mutreraphic Poners</a></h4>
+                                <p class="article-brief">The classon-care concept between, and abuverems so axist:now, and the lent earth science.</p>
+                                <div class="article-abstract">
+                                    <p><strong>Abstract:</strong> An exploration of architectural patterns that enable systems to scale gracefully while maintaining operational simplicity. This paper examines distributed system design principles, focusing on how to balance consistency, availability, and partition tolerance in real-world applications. Drawing from production experiences, we present strategies for building resilient microservices, managing state across boundaries, and implementing effective monitoring and observability practices.</p>
+                                </div>
                             </td>
                             <td class="article-actions">
                                 <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
@@ -65,8 +84,11 @@
                         <tr>
                             <td class="article-id">RTR-03</td>
                             <td class="article-content">
-                                <h4><a href="#">The Egegoys Ttims</a></h4>
-                                <p>Futura-volue, ix- and technology, and technology and marnizarsed processing booveniers.</p>
+                                <h4><a href="#" class="article-title">The Egegoys Ttims</a></h4>
+                                <p class="article-brief">Futura-volue, ix- and technology, and technology and marnizarsed processing booveniers.</p>
+                                <div class="article-abstract">
+                                    <p><strong>Abstract:</strong> A deep dive into the evolution of programming paradigms and their impact on software design. This article traces the historical development from procedural to object-oriented to functional programming, examining how each paradigm addresses different classes of problems. We analyze the cognitive models underlying these approaches and provide practical guidance on when to apply each paradigm, including modern hybrid approaches that combine multiple programming styles for optimal results.</p>
+                                </div>
                             </td>
                             <td class="article-actions">
                                 <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
@@ -81,8 +103,11 @@
                         <tr>
                             <td class="article-id">RTR-04</td>
                             <td class="article-content">
-                                <h4><a href="#">The Humeation</a></h4>
-                                <p>Processing on the cultural to syncretic...</p>
+                                <h4><a href="#" class="article-title">The Humeation</a></h4>
+                                <p class="article-brief">Processing on the cultural to syncretic...</p>
+                                <div class="article-abstract">
+                                    <p><strong>Abstract:</strong> An examination of the human factors in software development, exploring how team dynamics, communication patterns, and organizational culture impact code quality and project success. This paper draws on decades of industry experience to identify common pitfalls in software team management and offers practical strategies for fostering collaborative, productive development environments. Topics include code review practices, knowledge sharing, technical debt management, and building sustainable development cultures.</p>
+                                </div>
                             </td>
                             <td class="article-actions">
                                 <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
@@ -91,7 +116,7 @@
                         </tr>
                     </table>
                 </article>
-
+            -->
             </div>
         </section>
     </main>
@@ -103,6 +128,35 @@
         All articles are distributed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons CC-BY 4.0</a> license.
     </p>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const articleTitles = document.querySelectorAll('.article-title');
+    
+    articleTitles.forEach(function(title) {
+        title.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const articleContent = this.closest('.article-content');
+            const abstract = articleContent.querySelector('.article-abstract');
+            const articleCard = this.closest('.article-card');
+            
+            // Check if this article is already expanded
+            const isExpanded = articleCard.classList.contains('expanded');
+            
+            // Close all expanded articles
+            document.querySelectorAll('.article-card.expanded').forEach(function(card) {
+                card.classList.remove('expanded');
+            });
+            
+            // If this article wasn't expanded, expand it
+            if (!isExpanded) {
+                articleCard.classList.add('expanded');
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>

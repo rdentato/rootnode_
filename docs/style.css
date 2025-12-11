@@ -71,7 +71,7 @@ nav a {
 /* --- Hero Section --- */
 .hero {
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
 }
 
 .hero h2 {
@@ -89,12 +89,12 @@ nav a {
 
 /* --- Publications Section --- */
 .publications {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .publications h3 {
     font-size: 1.6rem;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .article-list {
@@ -123,7 +123,7 @@ nav a {
 }
 
 .article-card td {
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .article-id {
@@ -154,6 +154,7 @@ nav a {
     text-decoration: none;
     color: inherit;
     transition: color 0.2s;
+    cursor: pointer;
 }
 
 .article-content h4 a:hover {
@@ -161,11 +162,38 @@ nav a {
     text-decoration: underline;
 }
 
-.article-content p {
+.article-brief {
     margin: 0;
     font-size: 0.95rem;
     color: #555;
     line-height: 1.5;
+}
+
+.article-abstract {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, margin-top 0.4s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.article-card.expanded .article-abstract {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.article-abstract p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.article-abstract strong {
+    font-weight: 600;
+    color: #333;
 }
 
 .article-actions {
@@ -203,6 +231,29 @@ nav a {
     background-repeat: no-repeat;
 }
 
+/* Tooltip */
+.download-btn::after {
+    content: 'Download PDF';
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 3px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    font-family: 'Source Serif Pro', 'Georgia', serif;
+}
+
+.download-btn:hover::after {
+    opacity: 1;
+}
+
 .article-card:hover .download-btn {
     opacity: 1;
 }
@@ -235,6 +286,29 @@ nav a {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>');
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+/* Tooltip */
+.comment-btn::after {
+    content: 'View Discussion';
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 3px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    font-family: 'Source Serif Pro', 'Georgia', serif;
+}
+
+.comment-btn:hover::after {
+    opacity: 1;
 }
 
 .article-card:hover .comment-btn {
