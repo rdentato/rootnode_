@@ -93,10 +93,27 @@ document.addEventListener('DOMContentLoaded', async function () {
             ark: arkId ? BASE_URLS.ark + arkId : '',
         };
 
+        let visibleItems = 0;
+
         menu.querySelectorAll('.download-menu-item').forEach(function (item) {
             const kind = item.getAttribute('data-kind');
-            setLinkState(item, urls[kind] || '');
+            const url = urls[kind] || '';
+            const isMissing = !url;
+
+            item.style.display = isMissing ? 'none' : '';
+            item.setAttribute('href', isMissing ? '#' : url);
+            item.setAttribute('aria-disabled', isMissing ? 'true' : 'false');
+
+            if (!isMissing) visibleItems += 1;
         });
+
+        const shouldShowMenu = visibleItems > 0;
+        menu.style.display = shouldShowMenu ? '' : 'none';
+
+        if (!shouldShowMenu) {
+            closeMenu(menu);
+            if (state.openMenu === menu) state.openMenu = null;
+        }
     }
 
     async function loadArticlesJson() {
