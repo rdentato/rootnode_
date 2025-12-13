@@ -16,9 +16,9 @@
       "id": "RPR-03",
       "pdf": "RPR-2025-03-C-polymorphism.pdf",
       "doi": "",
-      "ark": "",
+      "ark": "13960/s2b8hwdrd6x",
       "comment": "4",
-      "title": "Implementing Polymorphism in C.",
+      "title": "Implementing Polymorphism in C",
       "brief": "Survey of the techniques to implement type-based and signature-based polymorphism in C.",
       "abstract": "Polymorphism, the ability to write functions whose behavior depends on the type and number of their arguments, is absent from C, yet essential for crafting usable library APIs. Without it, libraries expose numerous near-identical functions differing only in name and signature, burdening users with unnecessary complexity. This paper surveys techniques that enable polymorphic interfaces in C: five for type-based dispatch (tagged structures, function-pointer tables, tagged pointers, C11’s _Generic, and the container_of idiom) and three for signature-based dispatch (default substitution, argument selection, and argument counting). We analyze each approach with respect to type safety, performance, memory overhead, and portability, with attention to strict aliasing rules and _Generic limitations. By applying these idioms, library authors can present consistent, intuitive APIs that allow users to focus on higher-level problem solving rather than interface mechanics."
     }
