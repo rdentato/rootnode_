@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "generatedAt": "2025-12-13T10:50:26.631Z",
+  "articles": [
+    {
+      "id": "RTR-01",
+      "pdf": "RTR-2025-01-action-ontology.pdf",
+      "doi": "10.5281/zenodo.17915993",
+      "ark": "13960/s2p1kwk90k6",
+      "comment": "2",
+      "title": "An Action-Centric Ontology for Software Development",
+      "brief": "Unify software development activities through an \"ontology of action\", treating actions, rather than objects, as the primary reality of software systems.",
+      "abstract": "Software development remains plagued by conceptual fragmentation: requirements engineering, architectural design, implementation, and testing are treated as distinct disciplines with incompatible ontologies. This paper proposes a unified philosophical framework grounded in action ontology, the thesis that actions, not objects or states, constitute the primary reality of software systems. Drawing on Turchin’s cybernetic ontology and Heylighen’s theory of formality, we develop a comprehensive world view in which: (1) states are defined by the actions they enable; (2) software artifacts at all levels are decisions about action possibilities; (3) the development process is a progressive formalization along a context-dependence continuum; and (4) validation is the selection of decisions by observable reality. We demonstrate how this framework unifies the traditionally separate activities of requirements specification, architectural design, use case definition, coding, and testing under a single coherent ontology. The practical implications include novel approaches to traceability, change management, and tool design for software development environments."
+    },
+    {
+      "id": "RPR-03",
+      "pdf": "RPR-2025-03-C-polymorphism.pdf",
+      "doi": "",
+      "ark": "",
+      "comment": "4",
+      "title": "Implementing Polymorphism in C.",
+      "brief": "Survey of the techniques to implement type-based and signature-based polymorphism in C.",
+      "abstract": "Polymorphism, the ability to write functions whose behavior depends on the type and number of their arguments, is absent from C, yet essential for crafting usable library APIs. Without it, libraries expose numerous near-identical functions differing only in name and signature, burdening users with unnecessary complexity. This paper surveys techniques that enable polymorphic interfaces in C: five for type-based dispatch (tagged structures, function-pointer tables, tagged pointers, C11’s _Generic, and the container_of idiom) and three for signature-based dispatch (default substitution, argument selection, and argument counting). We analyze each approach with respect to type safety, performance, memory overhead, and portability, with attention to strict aliasing rules and _Generic limitations. By applying these idioms, library authors can present consistent, intuitive APIs that allow users to focus on higher-level problem solving rather than interface mechanics."
+    }
+  ]
+}

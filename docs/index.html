@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rootnode Distillery - Articles</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="logo.png" alt="Rootnode Logo" class="logo">
+        <img src="logo.png" alt="Rootnode Logo" class="logo" width="512" height="512">
         <div>
         <h1>Rootnode Distillery</h1>
         <nav>
             <a href="mailto:rdentato@rootnodedistillery.eu">Contacts</a>
             <span class="separator">•</span>
-            <a href="https://github.com/rdentato/rootnode_/discussions/3">Discussion</a>
+            <a href="https://forum.rootnodedistillery.eu/3">Discussion</a>
         </nav>
         </div>
     </header>
@@ -29,130 +33,20 @@
         </section>
 
         <section class="publications">
-           <!-- <h3>Articles</h3> -->
-            
             <div class="article-list">
-                
-                <article class="article-card">
+                <article class="article-card" data-id="[Loading]">
                     <table>
                         <tr>
-                            <td class="article-id">RTR-01</td>
-                            <td class="article-content">
-                                <h4><a name="RTR-01" href="#" class="article-title">An Action-Centric Ontology for Software Development</a></h4>
-                                <p class="article-brief">Unify software development activities through an "ontology of action", treating actions, rather than objects, as the primary reality of software systems.</p>
-                                <div class="article-abstract">
-                                    <p><strong>Abstract:</strong> 
-Software development remains plagued by conceptual fragmentation: requirements engineering,
-architectural design, implementation, and testing are treated as distinct disciplines
-with incompatible ontologies. This paper proposes a unified philosophical framework
-grounded in action ontology, the thesis that actions, not objects or states, constitute the
-primary reality of software systems. Drawing on Turchin’s cybernetic ontology and Heylighen’s
-theory of formality, we develop a comprehensive world view in which: (1) states
-are defined by the actions they enable; (2) software artifacts at all levels are decisions
-about action possibilities; (3) the development process is a progressive formalization along
-a context-dependence continuum; and (4) validation is the selection of decisions by observable
-reality. We demonstrate how this framework unifies the traditionally separate activities
-of requirements specification, architectural design, use case definition, coding, and testing
-under a single coherent ontology. The practical implications include novel approaches to
-traceability, change management, and tool design for software development environments.</p>
-                                </div>
+                            <td class="article-id">
+                                <div class="article-id-value">…</div>
                             </td>
-                            <td class="article-actions">
-                                <a href="https://github.com/rdentato/rootnode_/releases/download/pdf/RTR-2025-01-action-ontology.pdf" class="download-btn" aria-label="Download Article PDF"></a>
-                                <a href="https://github.com/rdentato/rootnode_/discussions/2" class="comment-btn" aria-label="View Discussion"></a>
+                            <td class="article-content">
+                                <h4>Loading articles…</h4>
+                                <p class="article-brief">Please wait.</p>
                             </td>
                         </tr>
                     </table>
                 </article>
-
-                <article class="article-card">
-                    <table>
-                        <tr>
-                            <td class="article-id">RPR-03</td>
-                            <td class="article-content">
-                                <h4><a name="RPR-03" href="#" class="article-title">Implementing Polymorphism in C.</a></h4>
-                                <p class="article-brief">Survey of the techniques to implement type-based and signature-based polymorphism in C.</p>
-                                <div class="article-abstract">
-                                    <p><strong>Abstract:</strong> 
-                                    Polymorphism, the ability to write functions whose behavior depends on the type and
-number of their arguments, is absent from C, yet essential for crafting usable library
-APIs. Without it, libraries expose numerous near-identical functions differing only in
-name and signature, burdening users with unnecessary complexity. This paper surveys
-techniques that enable polymorphic interfaces in C: five for type-based dispatch
-(tagged structures, function-pointer tables, tagged pointers, C11’s _Generic, and the
-container_of idiom) and three for signature-based dispatch (default substitution, argument
-selection, and argument counting). We analyze each approach with respect to
-type safety, performance, memory overhead, and portability, with attention to strict
-aliasing rules and _Generic limitations. By applying these idioms, library authors can
-present consistent, intuitive APIs that allow users to focus on higher-level problem solving
-rather than interface mechanics.</p>
-                                </div>
-                            </td>
-                            <td class="article-actions">
-                                <a href="https://github.com/rdentato/rootnode_/releases/download/pdf/RPR-2025-03-C-polymorphism.pdf" class="download-btn" aria-label="Download Article PDF"></a>
-                                <a href="https://github.com/rdentato/rootnode_/discussions/4" class="comment-btn" aria-label="View Discussion"></a>
-                            </td>
-                        </tr>
-                    </table>
-                </article>
-                <!-- - ->                
-                <article class="article-card">
-                    <table>
-                        <tr>
-                            <td class="article-id">RTR-02</td>
-                            <td class="article-content">
-                                <h4><a href="#" class="article-title">Mutreraphic Poners</a></h4>
-                                <p class="article-brief">The classon-care concept between, and abuverems so axist:now, and the lent earth science.</p>
-                                <div class="article-abstract">
-                                    <p><strong>Abstract:</strong> An exploration of architectural patterns that enable systems to scale gracefully while maintaining operational simplicity. This paper examines distributed system design principles, focusing on how to balance consistency, availability, and partition tolerance in real-world applications. Drawing from production experiences, we present strategies for building resilient microservices, managing state across boundaries, and implementing effective monitoring and observability practices.</p>
-                                </div>
-                            </td>
-                            <td class="article-actions">
-                                <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
-                                <a href="#" class="comment-btn" aria-label="View Discussion"></a>
-                            </td>
-                        </tr>
-                    </table>
-                </article>
-                
-                <article class="article-card">
-                    <table>
-                        <tr>
-                            <td class="article-id">RTR-03</td>
-                            <td class="article-content">
-                                <h4><a href="#" class="article-title">The Egegoys Ttims</a></h4>
-                                <p class="article-brief">Futura-volue, ix- and technology, and technology and marnizarsed processing booveniers.</p>
-                                <div class="article-abstract">
-                                    <p><strong>Abstract:</strong> A deep dive into the evolution of programming paradigms and their impact on software design. This article traces the historical development from procedural to object-oriented to functional programming, examining how each paradigm addresses different classes of problems. We analyze the cognitive models underlying these approaches and provide practical guidance on when to apply each paradigm, including modern hybrid approaches that combine multiple programming styles for optimal results.</p>
-                                </div>
-                            </td>
-                            <td class="article-actions">
-                                <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
-                                <a href="#" class="comment-btn" aria-label="View Discussion"></a>
-                            </td>
-                        </tr>
-                    </table>
-                </article>
-
-                 <article class="article-card">
-                    <table>
-                        <tr>
-                            <td class="article-id">RTR-04</td>
-                            <td class="article-content">
-                                <h4><a href="#" class="article-title">The Humeation</a></h4>
-                                <p class="article-brief">Processing on the cultural to syncretic...</p>
-                                <div class="article-abstract">
-                                    <p><strong>Abstract:</strong> An examination of the human factors in software development, exploring how team dynamics, communication patterns, and organizational culture impact code quality and project success. This paper draws on decades of industry experience to identify common pitfalls in software team management and offers practical strategies for fostering collaborative, productive development environments. Topics include code review practices, knowledge sharing, technical debt management, and building sustainable development cultures.</p>
-                                </div>
-                            </td>
-                            <td class="article-actions">
-                                <a href="#" class="download-btn" aria-label="Download Article PDF"></a>
-                                <a href="#" class="comment-btn" aria-label="View Discussion"></a>
-                            </td>
-                        </tr>
-                    </table>
-                </article>
-            < !-- -->
             </div>
         </section>
     </main>
@@ -160,39 +54,40 @@ rather than interface mechanics.</p>
 
 <footer>
     <p>
-        <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" class="cc-icon">
+        <img src="cc-by.png" alt="CC BY 4.0" class="cc-icon" width="88" height="31">
         All articles are distributed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons CC-BY 4.0</a> license.
     </p>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const articleTitles = document.querySelectorAll('.article-title');
-    
-    articleTitles.forEach(function(title) {
-        title.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const articleContent = this.closest('.article-content');
-            const abstract = articleContent.querySelector('.article-abstract');
-            const articleCard = this.closest('.article-card');
-            
-            // Check if this article is already expanded
-            const isExpanded = articleCard.classList.contains('expanded');
-            
-            // Close all expanded articles
-            document.querySelectorAll('.article-card.expanded').forEach(function(card) {
-                card.classList.remove('expanded');
-            });
-            
-            // If this article wasn't expanded, expand it
-            if (!isExpanded) {
-                articleCard.classList.add('expanded');
-            }
-        });
-    });
-});
-</script>
+<template id="download-menu-template">
+    <button type="button" class="download-btn" aria-label="Download / citation links" aria-haspopup="true" aria-expanded="false"></button>
+    <div class="download-menu-items" role="menu" aria-label="Download / citation links">
+        <a class="download-menu-item" data-kind="pdf" role="menuitem" href="#">PDF</a>
+        <a class="download-menu-item" data-kind="doi" role="menuitem" href="#" target="_blank" rel="noopener">DOI</a>
+        <a class="download-menu-item" data-kind="ark" role="menuitem" href="#" target="_blank" rel="noopener">ARK</a>
+    </div>
+</template>
+
+<template id="article-card-template">
+    <article class="article-card">
+        <table>
+            <tr>
+                <td class="article-id">
+                    <div class="article-id-value"></div>
+                    <div class="article-id-actions">
+                        <div class="download-menu"></div>
+                        <a href="#" class="comment-btn" aria-label="View Discussion" target="_blank" rel="noopener"></a>
+                    </div>
+                </td>
+                <td class="article-content">
+                    <h4><a name="" href="#" class="article-title"></a></h4>
+                    <p class="article-brief"></p>
+                    <div class="article-abstract"><p><strong>Abstract:</strong> <span class="article-abstract-text"></span></p></div>
+                </td>
+            </tr>
+        </table>
+    </article>
+</template>
 
 </body>
 </html>

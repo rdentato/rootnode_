@@ -1,3 +1,35 @@
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/libre-baskerville-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/libre-baskerville-700-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/source-serif-pro-400-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/source-serif-pro-600-latin.woff2') format('woff2');
+}
+
 /* --- Global Styles & Typography --- */
 html {
     height: 100%;
@@ -134,15 +166,31 @@ nav a {
 
 .article-id {
     font-family: 'Libre Baskerville', serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #333;
     width: 102px;
     white-space: nowrap;
     background-color: #f0ede3;
-    padding: 8px;
+    padding: 5px 8px 8px;
     border-radius: 3px;
     text-align: center;
+}
+
+.article-id-value {
+    line-height: 1.1;
+}
+
+.article-id-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+    font-size: 0;
+}
+
+.article-id .comment-btn {
+    margin-left: 6px;
 }
 
 .article-content {
@@ -189,6 +237,14 @@ nav a {
     margin-top: 12px;
 }
 
+.article-card.load-failed {
+    border-color: #d7b5b5;
+}
+
+.article-card.load-failed .article-id {
+    background-color: #f3e2e2;
+}
+
 .article-abstract p {
     margin: 0;
     font-size: 0.95rem;
@@ -202,17 +258,10 @@ nav a {
     color: #333;
 }
 
-.article-actions {
-    width: 52px;
-    min-width: 52px;
-    text-align: right;
-    white-space: nowrap;
-    font-size: 0;
-    padding-right: 8px;
-}
 
-/* --- Download Button --- */
-.download-btn {
+/* --- Icon Buttons (Download + Discussion) --- */
+.download-btn,
+.comment-btn {
     color: #333;
     opacity: 0.8;
     transition: opacity 0.2s, transform 0.1s;
@@ -220,68 +269,22 @@ nav a {
     height: 22px;
     position: relative;
     display: inline-block;
-    margin-left: 0;
     vertical-align: middle;
 }
 
-/* Create download icon with CSS */
-.download-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 22px;
-    height: 22px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
+.download-btn {
+    margin-left: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
 }
 
-/* Tooltip */
-.download-btn::after {
-    content: 'Download PDF';
-    position: absolute;
-    bottom: 100%;
-    right: 0;
-    margin-bottom: 8px;
-    padding: 6px 10px;
-    background-color: #333;
-    color: #fff;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    border-radius: 3px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    font-family: 'Source Serif Pro', 'Georgia', serif;
-}
-
-.download-btn:hover::after {
-    opacity: 1;
-}
-
-.article-card:hover .download-btn {
-    opacity: 1;
-}
-
-.download-btn:hover {
-    transform: translateY(2px); /* Subtle nudge down effect */
-}
-
-/* --- Comment/Discussion Button --- */
 .comment-btn {
     margin-left: 8px;
-    color: #333;
-    opacity: 0.8;
-    transition: opacity 0.2s, transform 0.1s;
-    width: 22px;
-    height: 22px;
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
 }
 
-/* Create comment icon with CSS - speech bubble icon */
+.download-btn::before,
 .comment-btn::before {
     content: '';
     position: absolute;
@@ -289,14 +292,20 @@ nav a {
     left: 0;
     width: 22px;
     height: 22px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
-/* Tooltip */
+.download-btn::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>');
+}
+
+.comment-btn::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>');
+}
+
+.download-btn::after,
 .comment-btn::after {
-    content: 'View Discussion';
     position: absolute;
     bottom: 100%;
     right: 0;
@@ -313,16 +322,70 @@ nav a {
     font-family: 'Source Serif Pro', 'Georgia', serif;
 }
 
+.download-btn::after {
+    content: 'Links';
+}
+
+.comment-btn::after {
+    content: 'View Discussion';
+}
+
+.download-btn:hover::after,
 .comment-btn:hover::after {
     opacity: 1;
 }
 
+.article-card:hover .download-btn,
 .article-card:hover .comment-btn {
     opacity: 1;
 }
 
+.article-card:hover .article-id-actions .download-btn,
+.article-card:hover .article-id-actions .comment-btn {
+    opacity: 1;
+}
+
+.download-btn:hover,
 .comment-btn:hover {
-    transform: translateY(2px); /* Subtle nudge down effect */
+    transform: translateY(2px);
+}
+
+/* --- Download/Citation Menu --- */
+.download-menu {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.download-menu-items {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 4px 0;
+    z-index: 1000;
+    min-width: 84px;
+}
+
+.download-menu.open .download-menu-items {
+    display: block;
+}
+
+.download-menu-item {
+    display: block;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    color: #222;
+    text-decoration: none;
+    text-align: center;
+}
+
+.download-menu-item:hover {
+    background: #f0ede3;
 }
 
 /* --- Footer --- */
